@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -10,7 +10,7 @@
 
     <packaging>pom</packaging>
     <modules>
-        <module>demo-01</module>
+        <module>bpmn</module>
     </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -38,10 +38,11 @@
                 <artifactId>flowable-engine</artifactId>
                 <version>6.8.0</version>
             </dependency>
+            
             <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-parent</artifactId>
-                <version>2.3.0.RELEASE</version>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>2.0.25</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
