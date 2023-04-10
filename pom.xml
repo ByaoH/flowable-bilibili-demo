@@ -12,6 +12,7 @@
 	<modules>
 		<module>bpmn-guide</module>
 		<module>bpmn-guide/bpmn-guide-getting-started</module>
+		<module>bpmn-guide/bpmn-guide-configuration</module>
 	</modules>
 	<properties>
 		<maven.compiler.source>17</maven.compiler.source>
