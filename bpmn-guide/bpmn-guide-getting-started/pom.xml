@@ -10,7 +10,7 @@
 		<relativePath>../../pom.xml</relativePath>
 	</parent>
 
-	<artifactId>getting-started</artifactId>
+	<artifactId>bpmn-guide-getting-started</artifactId>
 
 	<properties>
 		<maven.compiler.source>17</maven.compiler.source>
