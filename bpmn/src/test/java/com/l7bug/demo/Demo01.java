@@ -1,6 +1,7 @@
 package com.l7bug.demo;
 
 import org.flowable.engine.*;
+import org.flowable.engine.history.HistoricActivityInstance;
 import org.flowable.engine.impl.cfg.StandaloneProcessEngineConfiguration;
 import org.flowable.engine.repository.Deployment;
 import org.flowable.engine.repository.ProcessDefinition;
@@ -119,6 +120,26 @@ public class Demo01 {
             System.err.println(approved);
             taskService.complete(task.getId(), Map.of("approved", approved));
             step++;
+        }
+    }
+
+    @Test
+    public void historicActivityInstance() {
+        ProcessEngine processEngine = getProcessEngineConfiguration().buildProcessEngine();
+        RuntimeService runtimeService = processEngine.getRuntimeService();
+        List<ProcessInstance> list = runtimeService.createProcessInstanceQuery().list();
+        for (ProcessInstance processInstance : list) {
+            System.err.println("processInstance = " + processInstance);
+            HistoryService historyService = processEngine.getHistoryService();
+            List<HistoricActivityInstance> activities =
+                    historyService.createHistoricActivityInstanceQuery()
+                            .processInstanceId(processInstance.getId())
+                            .finished()
+                            .orderByHistoricActivityInstanceEndTime().asc()
+                            .list();
+            for (HistoricActivityInstance activity : activities) {
+                System.out.println("activity = " + activity);
+            }
         }
     }
 }
