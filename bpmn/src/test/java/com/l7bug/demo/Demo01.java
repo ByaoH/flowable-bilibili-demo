@@ -123,6 +123,9 @@ public class Demo01 {
 		}
 	}
 
+	/**
+	 * 查询流程历史记录
+	 */
 	@Test
 	public void historicActivityInstance() {
 		ProcessEngine processEngine = getProcessEngineConfiguration().buildProcessEngine();
