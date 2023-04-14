@@ -24,6 +24,7 @@ public class Demo01 {
 
 	@Test
 	public void getProcessEngineTest() {
-		System.err.println("processEngine = " + processEngine);
+		System.err.println("processEngineConfiguration.getClass() = " + processEngineConfiguration.getClass());
+		System.err.println("processEngine.getClass() = " + processEngine.getClass());
 	}
 }
