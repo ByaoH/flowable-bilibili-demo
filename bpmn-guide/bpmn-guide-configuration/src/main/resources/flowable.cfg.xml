@@ -2,14 +2,15 @@
 	   xmlns="http://www.springframework.org/schema/beans"
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="processEngineConfiguration" class="org.flowable.engine.impl.cfg.StandaloneProcessEngineConfiguration">
-
+	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource">
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
 		<property name="jdbcUrl"
 				  value="jdbc:mysql://81.68.180.131:12002/flowable-opendoc-demo?characterEncoding=UTF-8&amp;serverTimezone=GMT%2B8"/>
-		<property name="jdbcDriver" value="com.mysql.cj.jdbc.Driver"/>
-		<property name="jdbcUsername" value="root"/>
-		<property name="jdbcPassword" value="123456"/>
-
+		<property name="username" value="root"/>
+		<property name="password" value="123456"/>
+	</bean>
+	<bean id="processEngineConfiguration" class="org.flowable.engine.impl.cfg.StandaloneProcessEngineConfiguration">
+		<property name="dataSource" ref="dataSource"/>
 		<property name="databaseSchemaUpdate" value="true"/>
 
 		<property name="asyncExecutorActivate" value="false"/>
