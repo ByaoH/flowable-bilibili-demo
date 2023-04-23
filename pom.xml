@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.0.2</version>
+		<version>3.0.4</version>
 	</parent>
 
 	<groupId>com.l7bug</groupId>
@@ -23,7 +23,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- Spring Boot -->
-		<spring-boot.version>3.0.2</spring-boot.version>
+		<spring-boot.version>3.0.4</spring-boot.version>
 		<!--		flowable-->
 		<flowable.version>6.8.0</flowable.version>
 	</properties>
